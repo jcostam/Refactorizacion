@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+//comentario
 public class Fecha { 
 	private int dia; 
 	private int mes; 
@@ -15,7 +15,7 @@ public class Fecha {
 		if (dia < 1 || dia > 31) return false; 
 		if (mes < 1 || mes > 12) return false;
 		if (anio < 0) return false;
-		// determinamos la cantidad de días del mes:
+		// determinamos la cantidad de dÃ­as del mes:
 		int diasMes = 0;
 		switch (mes) { 
 		case 1: 
@@ -29,7 +29,7 @@ public class Fecha {
 		case 6: 
 		case 9:
 		case 11: diasMes = 30; break;
-		case 2: // verificación de año bisiesto
+		case 2: // verificaciÃ³n de aÃ±o bisiesto
 			if ((anio % 400==0)||( (anio % 4 == 0)&&(anio %100 !=0)))
 				diasMes = 29;
 			else 
@@ -45,16 +45,16 @@ public class Fecha {
 
 		int dia, mes, anyo;
 		Scanner teclado= new Scanner(System.in);
-		System.out.println ("Introduce un día: "); 
+		System.out.println ("Introduce un dÃ­a: "); 
 		dia = teclado.nextInt(); 
 		System.out.println ("Introduce un mes: "); 
 		mes = teclado.nextInt(); ;
-		System.out.println ("Introduce un año: "); 
+		System.out.println ("Introduce un aÃ±o: "); 
 		anyo = teclado.nextInt();  
 		Fecha f1=new Fecha(dia,mes,anyo);
 		if (f1.valida())
-			System.out.println("La fecha: "+dia+"/"+mes+"/"+anyo+" es válida");
+			System.out.println("La fecha: "+dia+"/"+mes+"/"+anyo+" es vÃ¡lida");
 		else
-			System.out.println("La fecha: "+dia+"/"+mes+"/"+anyo+" NO es válida");
+			System.out.println("La fecha: "+dia+"/"+mes+"/"+anyo+" NO es vÃ¡lida");
 	}
 }
