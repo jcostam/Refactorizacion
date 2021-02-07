@@ -17,6 +17,14 @@ public class Fecha {
 		if (mes < 1 || mes > 12) return false;
 		if (anio < 0) return false;
 		// determinamos la cantidad de días del mes:
+		int diasMes = diaMes();
+		if (dia > diasMes)
+			return false;
+		else 
+			return true;
+	}
+
+	private int diaMes() {
 		int diasMes = 0;
 		switch (mes) { 
 		case 1: 
@@ -31,31 +39,34 @@ public class Fecha {
 		case 9:
 		case 11: diasMes = 30; break;
 		case 2: // verificación de año bisiesto
-			if ((anio % 400==0)||( (anio % 4 == 0)&&(anio %100 !=0)))
-				diasMes = 29;
-			else 
-				diasMes = 28;
+			diasMes = bisiesto();
 			break;
 		}
-		if (dia > diasMes)
-			return false;
+		return diasMes;
+	}
+
+	private int bisiesto() {
+		int diasMes;
+		if ((anio % 400==0)||( (anio % 4 == 0)&&(anio %100 !=0)))
+			diasMes = 29;
 		else 
-			return true;
+			diasMes = 28;
+		return diasMes;
 	}
 	public static void main(String[] args) {
 
 		int dia, mes, anyo;
 		Scanner teclado= new Scanner(System.in);
-		System.out.println ("Introduce un día: "); 
+		System.out.println ("Introduce un dia: "); 
 		dia = teclado.nextInt(); 
 		System.out.println ("Introduce un mes: "); 
 		mes = teclado.nextInt(); ;
-		System.out.println ("Introduce un año: "); 
+		System.out.println ("Introduce un anyo: "); 
 		anyo = teclado.nextInt();  
 		Fecha f1=new Fecha(dia,mes,anyo);
 		if (f1.valida())
-			System.out.println("La fecha: "+dia+"/"+mes+"/"+anyo+" es válida");
+			System.out.println("La fecha: "+dia+"/"+mes+"/"+anyo+" es valida");
 		else
-			System.out.println("La fecha: "+dia+"/"+mes+"/"+anyo+" NO es válida");
+			System.out.println("La fecha: "+dia+"/"+mes+"/"+anyo+" NO es valida");
 	}
 }
