@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-//Cambio para una solicitud Pull Request
+//Cambio para una solicitud Pull Request     
 public class Fecha { 
 	private int dia; 
 	private int mes; 
