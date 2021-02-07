@@ -1,6 +1,6 @@
 import java.util.Scanner;
-//comentario
-//commit a una rama branch1
+
+//Cambio para una solicitud Pull Request
 public class Fecha { 
 	private int dia; 
 	private int mes; 
